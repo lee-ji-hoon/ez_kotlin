@@ -1,9 +1,10 @@
+package item10
+
 import example.mapper.ConvertMapper
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
-import java.security.DomainCombiner
 import kotlin.test.assertEquals
 
 data class DataType(
@@ -95,6 +96,8 @@ class ConvertMapperTest {
         // then
         assertAll(
             { assertEquals(result.name, "Container") },
+
+            // TODO 해당 부분 Mapper의 로직 변경 이후 테스트 해보자...
             /*{
                 result.dataList.forEach {
                     println("it -> $it")

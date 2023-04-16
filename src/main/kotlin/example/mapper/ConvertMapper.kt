@@ -26,16 +26,13 @@ class ConvertMapper<I : Any, O : Any>(
     }
 
     override fun invoke(data: I): O = with(outConstructor) {
-        val result = callBy(parameters.associateWith {
-            argFor(it, data)
-        })
+        val result = callBy(parameters.associateWith { argFor(it, data) })
         println("inType -> ${inType.primaryConstructor} / outType -> $outType")
         println("arg result -> $result")
         result
     }
 
     companion object {
-        inline operator fun <reified I : Any, reified O : Any> invoke() =
-            ConvertMapper(I::class, O::class)
+        inline operator fun <reified I : Any, reified O : Any> invoke() = ConvertMapper(I::class, O::class)
     }
 }
