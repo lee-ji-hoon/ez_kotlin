@@ -1,4 +1,4 @@
-package book.effective.chapter01.item12
+package book.effective.chapter02.item12
 
 
 fun Int.factorial(): Int = (1..this).product()

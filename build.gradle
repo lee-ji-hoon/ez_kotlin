@@ -31,6 +31,7 @@ application {
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
+        languageVersion = "1.9"
     }
 }
 compileTestKotlin {
